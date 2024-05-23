@@ -20,6 +20,10 @@ use App\Http\Controllers\UserController;
  Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/healthz', function () {
+    return response()->json(['status' => 'OK'], 200);
+});
+
 Route::resource('users',UserController::class);
 Route::resource('postes',PosteController::class);
 
